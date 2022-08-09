@@ -18,6 +18,11 @@ describe('Form Devs', () => {
 
     cy.get('@fullstackradio').should('not.be.checked')
     cy.get('input[type="radio"][value="frontend"]').should('be.checked')
+    cy.get('@seniority').find('option').contains('Selecione').should('be.selected')
+    cy.get('input[type="checkbox"][value="PHP"]').should('not.be.checked')
+    cy.get('input[type="checkbox"][value="C#"]').should('not.be.checked')
+    cy.get('input[type="checkbox"][value="Python"]').should('not.be.checked')
+    cy.get('input[type="checkbox"][value="Java"]').should('not.be.checked')
   })
   it('fills the form and submit', () => {
  
