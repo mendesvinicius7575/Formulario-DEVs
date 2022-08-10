@@ -1,6 +1,6 @@
 describe('Form Devs', () => {
   beforeEach(() => cy.visit('../../formulario.html'))
-  it.only('fills the form and submit', () => {
+  it('fills the form and submit', () => {
     cy.get('#nome').as('name').type('Vinicius')
     cy.get('#sobrenome').as('lastname').type('Mendes')
     cy.get('#email').as('email').type('olaolaola@gmail.com')
@@ -27,7 +27,11 @@ describe('Form Devs', () => {
   it('fills the form and submit', () => {
  
   })
-  it('fills the form and submit', () => {
+  it.only('fills the form and submit', () => {
+    cy.get('#nome').as('nameOne').type('Vinicius')
 
+    cy.get('.botao').click()
+
+    cy.get('@nameOne').should('be.empty')
   })
 })
