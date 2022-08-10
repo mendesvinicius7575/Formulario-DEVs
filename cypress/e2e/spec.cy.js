@@ -1,11 +1,12 @@
 describe('Form Devs', () => {
   beforeEach(() => cy.visit('../../formulario.html'))
-  it('fills the form and submit', () => {
-    
+  it.only('fills the form and submit', () => {
+    cy.get('#titulo').should('be.visible').and('have.text', 'Cadastro de DEVs')
+    cy.get('#subtitulo').should('have.text', 'Complete suas informações')
   })
   
 
-    it.only('Comando Inserção', () =>{
+    it('Comando Inserção', () =>{
       cy.fillformSubmit();
       cy.assertForm();
     })
